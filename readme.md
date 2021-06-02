@@ -4,6 +4,13 @@ A React knockoff ? Probably
 
 A React knockoff with a ui structure similar to flutter ? Definitely
 
+- [main](#redact)
+- [structure](#structure)
+  * [mount](#mount)
+  * [render](#render)
+- [types-of-components](#difference-between-stateless-and-stateful-components)
+- [first-app](#render-your-first-app-with-readact)
+
 ## Structure
 
 A component is a class containing 2 major functions :
