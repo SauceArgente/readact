@@ -1,16 +1,17 @@
-#Redact
+# Redact
 
 A React knockoff ? Probably
+
 A React knockoff with a ui structure similar to flutter ? Definitely
 
-##Structure
+## Structure
 
 A component is a class containing 2 major functions :
 
     -Mount
     -Render
 
-###Mount
+### Mount
 
 Mount is where you initialize the actual node in which the component will be located
 eg :       
@@ -27,7 +28,7 @@ The node helper function will :
     -Take the Class' context and set the class.node variable to the newly create node
     -Return the node 
 
-###Render
+### Render
 
 The mount function is the actual place where you define the ui structure of your component
 
@@ -106,4 +107,50 @@ class Text {
       this.node.innerHTML = this.text;
     }
 }
+```
+
+### Render your first app with Readact
+
+For this demo I used Rollup to bundle the app into the iife format
+
+(Ended up taking approximately 140 lines of code with nicely formatted code)
+
+```js
+const { Component, Node, Return, Builtins } = require("readact");
+
+const Text = Builtins.Text;
+const Container = Builtins.Container;
+
+class MainUI extends Component {
+  constructor() {
+    super();
+  }
+
+  mount() {
+    this._state.username = "user";
+
+    setTimeout(() => {
+      this.state.username = "world";
+    }, 2000);
+
+    return Node(this, "div", "full-screen");
+  }
+
+  render() {
+    Return(
+      this,
+      new Container(
+        {},
+        new Text({ type: "p" }, "Hello", this.state.username),
+        new Text({ type: "p" }, "wait 10 seconds"),
+        new Text({ type: "p" }, "Bye", this.state.username)
+      )
+    );
+  }
+}
+
+let UI = new MainUI();
+
+document.body.appendChild(UI.mount());
+UI.render();
 ```
