@@ -1,6 +1,6 @@
 {
   "name": "readact",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React + Flutter ? = Readact ?",
   "main": "index.js",
   "directories": {
@@ -8,6 +8,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sawcce/readact"
   },
   "keywords": [
     "react",
